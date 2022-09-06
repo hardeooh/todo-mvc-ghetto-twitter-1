@@ -5,9 +5,13 @@ const TodoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  likes: {
+    type: Boolean,
+    required: false,
+  },
   completed: {
     type: Boolean,
-    required: true,
+    required: false,
   },
   userId: {
     type: String,
