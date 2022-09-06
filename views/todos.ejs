@@ -8,24 +8,52 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
-    <ul>
+  <main class="tweetContainer">
+  <div class="card">
+    <ul class="columnOne">
+      <li>Home</li>
+      <li>Explore</li>
+      <li>Notifications</li>
+      <li>Messages</li>
+      <li>Bookmarks</li>
+      <li>Lists</li>
+      <li>Profile</li>
+      <li>Tweet</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card_child">
+    <h1>Ghetto Twitter</h1>
+    </div>
+    <div class="card_child">
+      <form action="/todos/createTodo" method='POST'>
+        <div>
+        <textarea id="tweet" name="todo"
+          rows="12" cols="50" class="card_child">
+          It was a dark and stormy night...
+        </textarea>
+        </div>
+        <div class="card_child">
+        <input type="submit">
+        </div>    
+      </form>
+    </div>
+    <h2><%= user.userName %> has <%= left %> things left to      do.</h2>
+    <ul class="tweetContainerTwo">
     <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+            <li class='tweetCard' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ?                    'completed' : 'not'%>'><%= el.todo %>                      </span>
                 <span class='del'> Delete </span>
             </li>
     <% }) %>    
     </ul>
-
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
-
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
-
+  </div>
+  <div class="card">
     <a href="/logout">Logout</a>
+  </div>
+  </main>
+
+  
 
     <script src="js/main.js"></script>
 </body>
