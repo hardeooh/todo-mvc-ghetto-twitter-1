@@ -72,17 +72,30 @@
 
 .card_child {
   text-align: center;
+  padding: 10px;
+}
+
+#tweet {
+  display: block;
+  text-align: left;
+  margin: 0 auto;
 }
 
 .tweetContainerTwo {
   display: flex;
   flex-direction: column;
   list-style: none;
+  padding: 10px;
 }
 
 .tweetCard {
-  height: 100px;
-  width: 300px;
+  height: 150px;
+  width: 350px;
+  word-wrap: break-word;
+  border-radius: 10px;
+  outline: white 1px solid;
+  padding: 10px;
+  margin: 10px auto;
 }
 
 .completed{

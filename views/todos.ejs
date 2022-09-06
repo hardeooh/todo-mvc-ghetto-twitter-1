@@ -11,14 +11,30 @@
   <main class="tweetContainer">
   <div class="card">
     <ul class="columnOne">
-      <li>Home</li>
-      <li>Explore</li>
-      <li>Notifications</li>
-      <li>Messages</li>
-      <li>Bookmarks</li>
-      <li>Lists</li>
-      <li>Profile</li>
-      <li>Tweet</li>
+      <li>
+        <a href="#">Home</a>
+      </li>
+      <li>
+        <a href="#">Explore</a>
+      </li>
+      <li>
+        <a href="#">Notifications</a>
+      </li>
+      <li>
+        <a href="#">Messages</a>
+      </li>
+      <li>
+        <a href="#">Bookmarks</a>
+      </li>
+      <li>
+        <a href="#">Lists</a>
+      </li>
+      <li>
+        <a href="#">Profile</a>
+      </li>
+      <li>
+        <a href="#">Tweet</a>
+      </li>
     </ul>
   </div>
   <div class="card">
@@ -27,23 +43,26 @@
     </div>
     <div class="card_child">
       <form action="/todos/createTodo" method='POST'>
-        <div>
+        <div class="tweetBox">
         <textarea id="tweet" name="todo"
           rows="12" cols="45" class="card_child">
-          Enter Tweet Here...
+          
         </textarea>
         </div>
         <div class="card_child">
-        <input type="submit">
+        <button type="submit">Submit</button>
         </div>    
       </form>
     </div>
-    <h2><%= user.userName %> has <%= left %> things left to      do.</h2>
+<!--     <h2><%= user.userName %> has <%= left %> things left to      do.</h2> -->
     <ul class="tweetContainerTwo">
     <% todos.forEach( el => { %>
             <li class='tweetCard' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ?                    'completed' : 'not'%>'><%= el.todo %>                      </span>
-                <span class='del'> Delete </span>
+               <div>
+                  <button type="button" class='del'> Delete </button>
+                 <button type="button">Like</button>
+               </div>
             </li>
     <% }) %>    
     </ul>
