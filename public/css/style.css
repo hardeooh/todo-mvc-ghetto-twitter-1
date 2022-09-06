@@ -98,6 +98,16 @@
   margin: 10px auto;
 }
 
+.tweetCardTop {
+  height: 120px;
+  width: 100%;
+}
+
+.tweetCardBottom {
+  height: 29px;
+  width: 100%;
+}
+
 .completed{
     text-decoration: line-through;
     color: gray;

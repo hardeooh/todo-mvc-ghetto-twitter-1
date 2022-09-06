@@ -39,18 +39,17 @@
   </div>
   <div class="card">
     <div class="card_child">
-    <h1>Ghetto Twitter</h1>
+      <h1>Ghetto Twitter</h1>
     </div>
     <div class="card_child">
       <form action="/todos/createTodo" method='POST'>
         <div class="tweetBox">
-        <textarea id="tweet" name="todo"
+          <textarea id="tweet" name="todo"
           rows="12" cols="45" class="card_child">
-          
-        </textarea>
+          </textarea>
         </div>
         <div class="card_child">
-        <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
         </div>    
       </form>
     </div>
@@ -58,11 +57,14 @@
     <ul class="tweetContainerTwo">
     <% todos.forEach( el => { %>
             <li class='tweetCard' data-id='<%=el._id%>'>
+              <div class='tweetCardTop'>  
                 <span class='<%= el.completed === true ?                    'completed' : 'not'%>'><%= el.todo %>                      </span>
-               <div>
-                  <button type="button" class='del'> Delete </button>
-                 <button type="button">Like</button>
-               </div>
+              </div>
+              <div class='tweetCardBottom'>
+                <button type="button" class='del'>      
+                  Delete </button>
+                <button type="button">Like</button>
+              </div>
             </li>
     <% }) %>    
     </ul>
